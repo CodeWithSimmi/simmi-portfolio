@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
-import  Home  from "./Pages/Home";
-import { About } from "./Pages/About";
-import { Project } from "./Pages/Project";
+import  Home  from "./pages/Home";
+import { About } from "./pages/About";
+import { Project } from "./pages/Project";
 import {Contact} from "./pages/Contact";
-import { Workexp } from "./Pages/Workexp";
+import { Workexp } from "./pages/Workexp";
 import { Headers } from "./Components/Header";
 import { Footers } from "./Components/Footer";
 
