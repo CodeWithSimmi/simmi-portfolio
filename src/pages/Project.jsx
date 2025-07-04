@@ -2,49 +2,43 @@ import SkilsFacts from "../API/projectdetails.json";
 
 export const Project = () => {
   return (
-    <section className="px-4">
-      <h3 className="text-[2rem] text-[#aaa6c3]">MY WORK</h3>
-      <h2 className="text-[60px] m-[12px_5px] font-extrabold font-[Cagliostro,sans-serif] text-white">
-        Projects
-      </h2>
-      <p className="text-[1.3rem] font-[Cagliostro,sans-serif] text-[#aaa6c3]">
-        Following projects showcases my skills and experience through real-world
-        examples of my work. Each project is briefly described with links to
-        code repositories and live demos in it. It reflects my ability to solve
-        complex problems, work with different technologies, and manage projects
-        effectively. I approach each project with a blend of creativity and
-        functionality, ensuring that the user experience is not only visually
-        engaging but also intuitive and seamless. My dedication to clean code
-        and best practices reflects in the efficiency and maintainability of my
-        projects.
-      </p>
+    <section className="w-full py-24 px-4">
+      <div className="max-w-screen-xl mx-auto text-center text-white">
+        {/* Headings */}
+        <h3 className="text-[1.1rem] uppercase text-[#aaa6c3] font-[Cagliostro,sans-serif] mb-2">
+          My Work
+        </h3>
+        <h2 className="text-[40px] sm:text-[60px] font-extrabold font-[Cagliostro,sans-serif] mb-6">
+          Projects
+        </h2>
 
-      <div className="project-cards flex flex-wrap justify-center gap-6 my-[7rem] mx-[9px]">
-        {SkilsFacts.map((currentskils) => {
-          const { id, ProjectName, image, Projectdetails, Skillsname } =
-            currentskils;
+        {/* Description */}
+        <p className="text-[1.1rem] sm:text-[1.3rem] font-[Cagliostro,sans-serif] text-[#aaa6c3] leading-8 max-w-4xl mx-auto mb-20">
+          Following projects showcase my skills and experience through real-world
+          examples of my work. Each project includes brief details, technologies used,
+          and reflects my ability to solve complex problems with clean, scalable solutions.
+        </p>
 
-          return (
-            <div className="card w-full sm:w-1/2 lg:w-1/3 p-2" key={id}>
-              <div className="relative border-2 border-transparent bg-[#151030] [background-clip:padding-box] rounded-[45px] p-[20px] flex flex-col h-full">
+        {/* Project Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
+          {SkilsFacts.map(({ id, ProjectName, image, Projectdetails, Skillsname }) => (
+            <div
+              key={id}
+              className="rounded-[40px] p-[2px] bg-gradient-to-tr from-[#1f1c22] via-[#151030] to-[#1f1c22] hover:scale-[1.03] transition-transform duration-300"
+            >
+              <div className="bg-[#151030] rounded-[40px] p-5 flex flex-col h-full text-start shadow-lg">
                 <img
-                  className="w-full h-[13rem] object-contain mb-2"
                   src={image}
-                  alt=""
+                  alt={ProjectName}
+                  className="w-full h-[12rem] object-contain mb-4 rounded-xl mx-auto"
                 />
-                <p className="text-[1.3rem] font-semibold text-white ml-[10px] mb-[5px] text-start">
-                  {ProjectName}
-                </p>
-                <p className="text-[13px] text-[#aaa6c3] mx-[12px] my-[11px] text-start">
-                  {Projectdetails}
-                </p>
-                <p className="mx-[12px] text-[0.9rem] text-[#ec008c] text-start">
-                  {Skillsname}
-                </p>
+                <h3 className="text-[1.3rem] font-semibold text-white mb-2">{ProjectName}</h3>
+                <p className="text-[1rem] text-[#aaa6c3] mb-3">{Projectdetails}</p>
+                <p className="text-[0.9rem] text-[#ec008c] font-medium">{Skillsname}</p>
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );
