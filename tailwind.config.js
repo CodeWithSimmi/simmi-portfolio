@@ -2,7 +2,6 @@ module.exports = {
   theme: {
     extend: {
      
-      
       fontFamily: {
         cagliostro: ["Cagliostro", "sans-serif"],
       },

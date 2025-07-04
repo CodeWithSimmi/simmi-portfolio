@@ -7,7 +7,7 @@ import { Project } from "./pages/Project";
 import {Contact} from "./pages/Contact";
 import { Workexp } from "./pages/Workexp";
 import { Headers } from "./Components/Header";
-import { Footers } from "./Components/Footer";
+import { Footer } from "./Components/Footer";
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/workexp" element={<Workexp />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footers />
+      <Footer />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { LuDownload } from "react-icons/lu";
 
 export const Herosection = () => {
   return (
-    <main className="flex items-center justify-center p-[10rem]  ">
+    <main className="flex items-center justify-center p-[10rem] mt-[3rem]  ">
       <div className="text-center">
         <div className="mt-[1rem]">
           <h1 className="font-bold leading-[1.15] text-4xl text-white">

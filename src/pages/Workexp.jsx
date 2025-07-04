@@ -27,7 +27,7 @@ const experiences = [
 
  export const Workexp = () => {
   return (
-    <section className="py-16 px-4 max-w-6xl mx-auto">
+    <section className="py-16 px-4 max-w-6xl mx-auto my-8">
       <p className="text-center text-gray-400 text-lg animate-fade-in">
         WHAT I HAVE DONE SO FAR
       </p>

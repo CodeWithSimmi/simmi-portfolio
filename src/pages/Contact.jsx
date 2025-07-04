@@ -12,9 +12,9 @@ export const Contact = () => {
   }
 
   return (
-    <section className="bg-[#151030] rounded-[45px] m-8 p-8 animate-slideIn">
+    <section className="bg-[#151030] rounded-[25px] m-4 p-8 animate-slideIn fade-up my-20">
       <p className="text-[#aaa6c3] text-lg font-cagliostro mb-1">GET IN TOUCH</p>
-      <h2 className="text-white text-5xl font-cagliostro font-semibold mb-3">Contact</h2>
+      {/* <h2 className="text-white text-3xl font-cagliostro font-semibold mb-3">Contact</h2> */}
 
       <div className="container mx-auto">
         <form
@@ -64,7 +64,10 @@ export const Contact = () => {
           </button>
         </form>
       </div>
+
+      
     </section>
+    
   );
 };
 
