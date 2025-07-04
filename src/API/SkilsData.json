@@ -1,0 +1,55 @@
+[
+
+
+   {
+      "id": 1,
+      "SkilsName": "Frontend Development",
+      "image": "/src/assets/frontend1.png"
+   },
+   
+   {
+      "id": 2,
+      "SkilsName": "React Development",
+      "image": "/src/assets/react.png"
+
+   },
+
+   
+   {
+      "id": 3,
+      "SkilsName": "UI/UX Design",
+      "image": "/src/assets/ui.png"
+   },
+
+
+   {
+      "id": 4,
+      "SkilsName": "API Integration",
+      "image": "/src/assets/api.png"
+   },
+
+     
+   {
+      "id": 5,
+      "SkilsName": "Web Designing",
+      "image": "/src/assets/webdesign.png"
+   },
+
+
+   {
+      "id": 6,
+      "SkilsName": "Code Maintenance ",
+      "image": "/src/assets/code maintain.png"
+      
+   },
+
+   {
+      "id": 7,
+      "SkilsName": "Graphic Design",
+      "image": "/src/assets/graphic design.png"
+      
+   }
+
+   
+
+]

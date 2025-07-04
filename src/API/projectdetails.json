@@ -1,0 +1,49 @@
+[
+
+
+    {
+       "id": 1,
+       "ProjectName": "Geyser Repair Website",
+       "image": "src/assets/geyserrepair .png",
+       "Projectdetails":"Developed a responsive website for geyser repair services using HTML, CSS, and React.js. The project highlighted clear service display, improving user access and interaction with the business Owner..",
+       "Skillsname": "#Reactjs  #html  #css"
+
+    },
+
+    {
+      "id": 2,
+      "ProjectName": "Tyreplex - Ui Development",
+      "image": "/src/assets/tyreplex.png",
+      "Projectdetails":"Contributed to the UI design of a responsive application named TyrePlex using HTML, CSS,Bootstrap. Showcased a clean, user-friendly interface tailored for automotive services automotive services.. automotive services....",
+      "Skillsname": "#Html ,#Css , #bootstrap"
+
+   },
+
+   {
+      "id": 3,
+      "ProjectName": "Oteroo - CRUD Application",
+      "image": "/src/assets/oteroo.png",
+      "Projectdetails":"Contributed to the development of a responsive CRUD application named Oteroo using React, Context API. This project showcased real-time operations and dish data stored in Firebase Firestore...",
+      "Skillsname": "#Reactjs,  #firebase , #Context API"
+
+   },
+
+   {
+      "id": 4,
+      "ProjectName": "Oteroo - CRUD Application",
+      "image": "/src/assets/oteroo.png",
+      "Projectdetails":"Contributed to the development of a responsive CRUD application named Oteroo using React, Context API. This project showcased real-time operations and dish data stored in Firebase Firestore...",
+      "Skillsname": "#Reactjs,  #firebase , #Context API"
+
+   }
+
+
+
+   
+
+  
+    
+
+   
+
+ ]

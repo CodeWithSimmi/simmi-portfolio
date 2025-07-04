@@ -1,0 +1,93 @@
+.section-contact {
+    background-color: #151030;
+    border-radius: 45px;
+    margin: 2rem 3rem;
+    padding: 2rem 3rem;
+    animation-direction: normal;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0ms;
+    animation-name: animation-2txazo;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes animation-2txazo {
+    0% {
+      transform: translate3d(-100%, 0px, 0px);
+      visibility: visible;
+    }
+  
+    100% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+  }
+  
+  .fileds {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  
+  .fileds h1 {
+    font-family: Cagliostro, sans-serif;
+    
+    font-size: 18px;
+  }
+  
+  .fileds .form-control {
+    width: 100%;
+    margin-bottom: 2.9rem;
+    margin-top: 1rem;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #1b182e;
+    border: none;
+    padding: 10px 10px;
+    cursor: text;
+    font-family: Cagliostro, sans-serif;
+    font-size: 15px;
+    color: white;
+  }
+  
+  .fileds button {
+    width: 10%;
+    font-family: Cagliostro, sans-serif;
+    background-color: #1b182e;
+    padding: 10px 2px;
+    justify-content: center;
+    font-size: 15px;
+  }
+  
+  .section-contact p {
+    font-family: Cagliostro, sans-serif;
+    font-size: 18px;
+    color: #aaa6c3;
+    text-align: left;
+    margin-top: 4px;
+  }
+  
+  .section-contact h2 {
+    font-size: 50px;
+    font-family: Cagliostro, sans-serif;
+    font-weight: 600;
+    text-align: left;
+    margin: 12px 0;
+  }
+  
+  @media (max-width: 800px) {
+    .fileds button{
+      
+      width: 15%;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .fileds button{
+      width: 20%;
+      
+    }
+  }
+  
+  
+  
