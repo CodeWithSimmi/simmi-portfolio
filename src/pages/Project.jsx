@@ -1,5 +1,5 @@
 import SkilsFacts from "../API/projectdetails.json";
-
+import { motion } from "framer-motion";
 export const Project = () => {
   return (
     <section className="w-full py-24 px-4">
@@ -13,11 +13,17 @@ export const Project = () => {
         </h2>
 
         {/* Description */}
-        <p className="text-[1.1rem] sm:text-[1.3rem] font-[Cagliostro,sans-serif] text-[#aaa6c3] leading-8 max-w-4xl mx-auto mb-20">
+       <motion.p
+          className="text-[1.1rem] sm:text-[1.3rem] font-[Cagliostro,sans-serif] text-[#aaa6c3] leading-8 max-w-4xl mx-auto mb-20"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           Following projects showcase my skills and experience through real-world
           examples of my work. Each project includes brief details, technologies used,
           and reflects my ability to solve complex problems with clean, scalable solutions.
-        </p>
+        </motion.p>
 
         {/* Project Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-4">

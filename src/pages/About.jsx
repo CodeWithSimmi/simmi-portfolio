@@ -1,4 +1,5 @@
 import SkilsFacts from "../API/SkilsData.json";
+import { motion } from "framer-motion";
 
 export const About = () => {
   return (
@@ -12,7 +13,13 @@ export const About = () => {
       </h2>
 
       {/* Description */}
-      <p className="text-[1.2rem] leading-8 font-[Cagliostro,sans-serif] text-[#aaa6c3] max-w-4xl mb-16">
+       <motion.p
+          className="text-[1.2rem] leading-8 font-[Cagliostro,sans-serif] text-[#aaa6c3] max-w-4xl mb-16"
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }} // Triggers only once when 30% visible
+      >
         I am a passionate and detail-oriented front-end developer with a strong
         foundation in web technologies. My journey in the world of web
         development has been marked by hands-on experience, creativity, and a
@@ -20,8 +27,7 @@ export const About = () => {
         interfaces. I'm a quick learner and collaborate closely with clients to
         create efficient, scalable, and user-friendly solutions that solve
         real-world problems. Let's work together to bring your ideas to life!
-      </p>
-
+      </motion.p>
       {/* Skills Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center justify-center">
         {SkilsFacts.map(({ id, SkilsName, image }) => (

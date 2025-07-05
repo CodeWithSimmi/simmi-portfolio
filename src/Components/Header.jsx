@@ -45,8 +45,8 @@ export const Headers = () => {
 
       {/* Nav Links - Mobile */}
       {isMenuOpen && (
-        <nav className="lg:hidden bg-[#222] px-6 pb-4">
-          <ul className="flex flex-col gap-4">
+        <nav className="lg:hidden bg-[#070505] px-6 pb-4">
+          <ul className="flex flex-col gap-4 py-4">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <NavLink
