@@ -8,6 +8,8 @@ import {Contact} from "./pages/Contact";
 import { Workexp } from "./pages/Workexp";
 import { Headers } from "./Components/Header";
 import { Footer } from "./Components/Footer";
+import { PackagesPage } from "./pages/Package";
+import { PaymentPage } from "./pages/PaymentPage";
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
         <Route path="/project" element={<Project />} />
         <Route path="/workexp" element={<Workexp />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/packages" element={<PackagesPage/>} />
+      <Route path="/payment" element={<PaymentPage />} />
       </Routes>
       <Footer />
     </div>
