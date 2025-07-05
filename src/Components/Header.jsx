@@ -17,7 +17,7 @@ export const Headers = () => {
   };
 
   return (
-    <header className="w-full bg-[#111] text-white fixed top-0 left-0 z-50">
+    <header className="w-full  text-white fixed top-0 left-0 z-50">
       <div className="flex justify-between items-center py-4 px-6">
         {/* Logo */}
         <NavLink to="/" className="text-[1.3rem] font-cagliostro hover:text-[#2e86c1]">
