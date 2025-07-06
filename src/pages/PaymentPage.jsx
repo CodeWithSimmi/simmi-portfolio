@@ -70,7 +70,7 @@ export const PaymentPage = () => {
             <p className="text-pink-500 mt-4 font-semibold text-lg">₹{price}</p>
           </div>
 
-          {/* 🔥 Card Total Section */}
+          {/*  Card Total Section */}
           <div className="bg-[#2a273d] p-4 rounded-lg space-y-2">
             <h4 className="text-lg font-semibold mb-2">📦 Card Total</h4>
             <div className="flex justify-between text-sm">
