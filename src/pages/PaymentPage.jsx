@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export const PaymentPage = () => {
   const location = useLocation();
@@ -11,23 +12,50 @@ export const PaymentPage = () => {
   };
 
   const [method, setMethod] = useState("card");
-
-  // UPI Verification States
   const [upiID, setUpiID] = useState("");
-  const [upiStatus, setUpiStatus] = useState(null); // null | "valid" | "invalid"
+  const [upiStatus, setUpiStatus] = useState(null);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
+
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const isFormValid = fullName && email && address && phone;
 
   const handleUPIVerify = () => {
-  const upiRegex = /^[0-9]{10}@(ybl|ibl)$/;
-  if (upiRegex.test(upiID.trim())) {
-    setUpiStatus("valid");
-  } else {
-    setUpiStatus("invalid");
+    const upiRegex = /^[0-9]{10}@(ybl|ibl)$/;
+    setUpiStatus(upiRegex.test(upiID.trim()) ? "valid" : "invalid");
+  };
+
+  const handlePayment = (e) => {
+    e.preventDefault();
+    if (isFormValid) {
+      setPaymentSuccess(true);
+    }
+  };
+
+  if (paymentSuccess) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen text-center text-white">
+        <Player
+          autoplay
+          loop={false}
+          keepLastFrame={true}
+          src="https://assets2.lottiefiles.com/packages/lf20_jbrw3hcz.json"
+          style={{ height: "300px", width: "300px" }}
+        />
+        <h2 className="text-3xl font-bold mt-4">Payment Successful!</h2>
+        <p className="text-lg mt-2 text-gray-400">
+          Thank you so much for your purchase 🎉
+        </p>
+      </div>
+    );
   }
-};
 
   return (
-    <section className="min-h-screen bg-[#0f0f1b] text-white px-6 py-12 flex items-start justify-center">
-      <div className="w-full max-w-5xl bg-[#1e1b2f] rounded-xl p-8 shadow-lg grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="min-h-screen text-white px-6 py-12 flex items-start justify-center mt-12">
+      <div className="w-full max-w-5xl bg-[#141315] rounded-xl p-8 shadow-lg grid grid-cols-1 md:grid-cols-3 gap-8">
 
         {/* 1. Order Summary */}
         <div className="col-span-1 border-r border-[#2d2b3f] pr-4">
@@ -43,47 +71,31 @@ export const PaymentPage = () => {
         <div className="col-span-1 px-2">
           <h3 className="text-xl font-semibold mb-4">💳 Payment Method</h3>
           <div className="space-y-4">
+
             {/* Payment Options */}
             <div className="space-y-3">
-              <label className="flex items-center gap-3">
-                <input
-                  type="radio"
-                  name="method"
-                  checked={method === "card"}
-                  onChange={() => setMethod("card")}
-                />
-                <span>Credit / Debit Card</span>
-              </label>
-              <label className="flex items-center gap-3">
-                <input
-                  type="radio"
-                  name="method"
-                  checked={method === "upi"}
-                  onChange={() => setMethod("upi")}
-                />
-                <span>UPI</span>
-              </label>
-              <label className="flex items-center gap-3">
-                <input
-                  type="radio"
-                  name="method"
-                  checked={method === "netbanking"}
-                  onChange={() => setMethod("netbanking")}
-                />
-                <span>Net Banking</span>
-              </label>
-              <label className="flex items-center gap-3">
-                <input
-                  type="radio"
-                  name="method"
-                  checked={method === "wallet"}
-                  onChange={() => setMethod("wallet")}
-                />
-                <span>Digital Wallet (Paytm / GPay / PhonePe)</span>
-              </label>
+              {["card", "upi", "netbanking", "wallet"].map((option) => (
+                <label key={option} className="flex items-center gap-3">
+                  <input
+                    type="radio"
+                    name="method"
+                    checked={method === option}
+                    onChange={() => setMethod(option)}
+                  />
+                  <span>
+                    {option === "card"
+                      ? "Credit / Debit Card"
+                      : option === "upi"
+                      ? "UPI"
+                      : option === "netbanking"
+                      ? "Net Banking"
+                      : "Digital Wallet (Paytm / GPay / PhonePe)"}
+                  </span>
+                </label>
+              ))}
             </div>
 
-            {/* Conditional Fields */}
+            {/* Conditional Inputs */}
             <div className="space-y-4">
               {method === "card" && (
                 <>
@@ -128,7 +140,6 @@ export const PaymentPage = () => {
                       Verify
                     </button>
                   </div>
-
                   {upiStatus === "valid" && (
                     <div className="flex items-center text-green-400 gap-2">
                       <FaCheckCircle />
@@ -169,28 +180,40 @@ export const PaymentPage = () => {
         {/* 3. Billing Details */}
         <div className="col-span-1 px-2">
           <h3 className="text-xl font-semibold mb-4">📄 Billing Details</h3>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handlePayment}>
             <input
               type="text"
               placeholder="Full Name"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
               className="w-full p-3 bg-[#2a273d] rounded-lg text-white placeholder-gray-400"
             />
             <input
               type="email"
               placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full p-3 bg-[#2a273d] rounded-lg text-white placeholder-gray-400"
             />
             <input
               type="text"
               placeholder="Billing Address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
               className="w-full p-3 bg-[#2a273d] rounded-lg text-white placeholder-gray-400"
             />
             <input
               type="text"
               placeholder="Phone Number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="w-full p-3 bg-[#2a273d] rounded-lg text-white placeholder-gray-400"
             />
-            <button className="w-full mt-2 bg-amber-400 text-black py-3 rounded-lg hover:bg-amber-300 font-bold">
+            <button
+              type="submit"
+              disabled={!isFormValid}
+              className="w-full mt-2 bg-amber-400 text-black py-3 rounded-lg hover:bg-amber-300 font-bold"
+            >
               Pay ₹{price}
             </button>
           </form>
